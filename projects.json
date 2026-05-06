@@ -4,7 +4,7 @@
     "type": "codepen",
     "penUser": "chen-chen-the-reactor",
     "penId": "YPpyYOL",
-    "description": "計算股票損益及回本股價。",
+    "description": "整合台股交易手續費（含折扣）與證交稅機制，即時提供損益、投資報酬率及保本回本股價的計算工具。",
     "tags": ["JS"]
   },
   {
@@ -12,7 +12,7 @@
     "type": "github-pages",
     "url": "https://ujcycu.github.io/Sudoku/",
     "source": "https://github.com/ujcycu/Sudoku",
-    "description": "動態生成數獨遊戲。",
+    "description": "基於回溯演算法與挖洞法，動態生成唯一解的數獨謎題，並提供即時輸入驗證。",
     "tags": ["JS"]
   },
   {
@@ -20,7 +20,7 @@
     "type": "codepen",
     "penUser": "chen-chen-the-reactor",
     "penId": "KwgjYbx",
-    "description": "練習五十音的配對記憶與語音合成遊戲。",
+    "description": "結合卡牌翻牌機制與 Web Speech API 的日語五十音學習遊戲，支持平假名、片假名與羅馬拼音的配對與即時發音。",
     "tags": ["JS"]
   },
   {
@@ -28,7 +28,7 @@
     "type": "python-script",
     "source": "https://github.com/ujcycu/elephantChess_MahJong",
     "colabUrl": "#",
-    "description": "Python 象棋麻將，自動洗牌與電腦對戰",
+    "description": "基於 Python 實現的經典象棋麻將單機遊戲，具備洗牌、摸打牌流程，並透過規則判定演算法實現自動胡牌檢測與輕量級電腦對戰。",
     "tags": ["Python"]
   }
 ]
