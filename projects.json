@@ -1,0 +1,26 @@
+[
+  {
+    "title": "股票損益計算機",
+    "type": "codepen",
+    "penUser": "chen-chen-the-reactor",
+    "penId": "YPpyYOL",
+    "description": "計算股票損益及回本股價。",
+    "tags": ["JS"]
+  },
+  {
+    "title": "數獨遊戲",
+    "type": "github-pages",
+    "url": "https://ujcycu.github.io/Sudoku/",
+    "source": "https://github.com/ujcycu/Sudoku",
+    "description": "動態生成數獨遊戲。",
+    "tags": ["JS"]
+  },
+  {
+    "title": "五十音記憶遊戲",
+    "type": "codepen",
+    "penUser": "chen-chen-the-reactor",
+    "penId": "KwgjYbx",
+    "description": "練習五十音的配對記憶與語音合成遊戲。",
+    "tags": ["JS"]
+  }
+]

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>專案展示</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0f172a;
+      font-family: system-ui, sans-serif;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .back-btn {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      padding: 10px 18px;
+      background: rgba(30, 41, 59, 0.85);
+      color: #f8fafc;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 9999;
+      transition: all 0.2s;
+    }
+    .back-btn:hover {
+      background: rgba(51, 65, 85, 1);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-btn">← 返回首頁</a>
+  <div id="viewer" style="height: 100%;"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const type = params.get('type');
+    const title = params.get('title');
+    if (title) document.title = title;
+
+    const viewer = document.getElementById('viewer');
+
+    if (type === 'codepen') {
+      const user = params.get('user');
+      const id = params.get('id');
+      // 使用 /embed/ 模式展示 CodePen，既美觀又防毒
+      viewer.innerHTML = `
+        <iframe src="https://codepen.io/${user}/embed/${id}?default-tab=result&theme-id=dark" allowfullscreen="true" loading="lazy"></iframe>
+      `;
+    } else if (type === 'hf') {
+      const space = params.get('space');
+      // 直接內嵌 Hugging Face Spaces 網頁
+      viewer.innerHTML = `
+        <iframe src="${space}" allowfullscreen="true" loading="lazy"></iframe>
+      `;
+    }
+  </script>
+</body>
+</html>

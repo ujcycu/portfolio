@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>控制台</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Project Hub</h1>
+    
+    <div class="controls">
+      <input type="text" id="search-input" placeholder="搜尋專案名稱或標籤...">
+      <div class="filters">
+        <button class="filter-btn active" data-type="all">全部</button>
+        <button class="filter-btn" data-type="github-pages">網頁部署</button>
+        <button class="filter-btn" data-type="codepen">CodePen</button>
+        <!-- <button class="filter-btn" data-type="python-script">Python/腳本</button> -->
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="project-grid" class="grid-container">
+      </div>
+  </main>
+
+  <script>
+    let allProjects = [];
+
+    // 1. 取得專案資料
+    fetch('projects.json')
+      .then(res => res.json())
+      .then(data => {
+        allProjects = data;
+        renderProjects(allProjects);
+      });
+
+    // 2. 渲染卡片邏輯
+    function renderProjects(projects) {
+      const grid = document.getElementById('project-grid');
+      grid.innerHTML = projects.map(p => {
+        let primaryBtn = '';
+        let secondaryBtn = '';
+        let typeBadge = '';
+
+        // 核心分流邏輯
+        switch(p.type) {
+          case 'github-pages':
+            typeBadge = `<span class="badge badge-web">Web</span>`;
+            primaryBtn = `<a href="${p.url}" target="_blank" class="btn btn-primary">開啟網頁</a>`;
+            secondaryBtn = p.source ? `<a href="${p.source}" target="_blank" class="btn btn-outline">Code</a>` : '';
+            break;
+
+          case 'codepen':
+            typeBadge = `<span class="badge badge-pen">CodePen</span>`;
+            // 跳轉至本地的 view.html 進行全螢幕嵌入
+            const viewUrl = `view.html?type=codepen&user=${p.penUser}&id=${p.penId}&title=${encodeURIComponent(p.title)}`;
+            primaryBtn = `<a href="${viewUrl}" target="_blank" class="btn btn-primary">全螢幕預覽</a>`;
+            secondaryBtn = `<a href="https://codepen.io/${p.penUser}/pen/${p.penId}" target="_blank" class="btn btn-outline">CodePen 原站</a>`;
+            break;
+
+          case 'python-script':
+            typeBadge = `<span class="badge badge-py">Python</span>`;
+            // 如果有 Colab 連結就給線上跑，否則引導至 GitHub 看 Readme
+            primaryBtn = p.colabUrl 
+              ? `<a href="${p.colabUrl}" target="_blank" class="btn btn-primary btn-colab">⚡ 在 Colab 執行</a>` 
+              : `<a href="${p.source}" target="_blank" class="btn btn-primary">查看專案</a>`;
+            secondaryBtn = p.colabUrl ? `<a href="${p.source}" target="_blank" class="btn btn-outline">GitHub</a>` : '';
+            break;
+
+          case 'huggingface':
+            typeBadge = `<span class="badge badge-hf">AI Space</span>`;
+            const hfViewUrl = `view.html?type=hf&space=${encodeURIComponent(p.spaceUrl)}&title=${encodeURIComponent(p.title)}`;
+            primaryBtn = `<a href="${hfViewUrl}" target="_blank" class="btn btn-primary">線上體驗</a>`;
+            secondaryBtn = p.source ? `<a href="${p.source}" target="_blank" class="btn btn-outline">Code</a>` : '';
+            break;
+        }
+
+        return `
+          <div class="card" data-type="${p.type}">
+            <div class="card-header">
+              ${typeBadge}
+            </div>
+            <h3>${p.title}</h3>
+            <p>${p.description}</p>
+            <div class="tags">
+              ${p.tags.map(t => `<span class="tag">#${t}</span>`).join('')}
+            </div>
+            <div class="card-actions">
+              ${primaryBtn}
+              ${secondaryBtn}
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // 3. 搜尋與篩選事件監聽
+    const searchInput = document.getElementById('search-input');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+
+    function filterData() {
+      const keyword = searchInput.value.toLowerCase();
+      const activeType = document.querySelector('.filter-btn.active').dataset.type;
+
+      const filtered = allProjects.filter(p => {
+        const matchesSearch = p.title.toLowerCase().includes(keyword) || 
+                              p.tags.some(t => t.toLowerCase().includes(keyword));
+        const matchesType = activeType === 'all' || p.type === activeType;
+        return matchesSearch && matchesType;
+      });
+      renderProjects(filtered);
+    }
+
+    searchInput.addEventListener('input', filterData);
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        e.target.classList.add('active');
+        filterData();
+      });
+    });
+  </script>
+</body>
+</html>
