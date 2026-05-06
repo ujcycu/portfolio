@@ -22,5 +22,13 @@
     "penId": "KwgjYbx",
     "description": "練習五十音的配對記憶與語音合成遊戲。",
     "tags": ["JS"]
+  },
+  {
+    "title": "象棋麻將",
+    "type": "python-script",
+    "source": "https://github.com/ujcycu/elephantChess_MahJong",
+    "colabUrl": "#",
+    "description": "Python 象棋麻將，自動洗牌與電腦對戰",
+    "tags": ["Python"]
   }
 ]
