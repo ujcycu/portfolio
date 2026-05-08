@@ -21,7 +21,7 @@
     "penUser": "chen-chen-the-reactor",
     "penId": "KwgjYbx",
     "description": "結合卡牌翻牌機制與 Web Speech API 的日語五十音學習遊戲，支持平假名、片假名與羅馬拼音的配對與即時發音。",
-    "tags": ["JS"]
+    "tags": ["JS", "Web Speech API"]
   },
   {
     "title": "象棋麻將",
@@ -30,5 +30,13 @@
     "colabUrl": "#",
     "description": "基於 Python 實現的經典象棋麻將單機遊戲，具備洗牌、摸打牌流程，並透過規則判定演算法實現自動胡牌檢測與輕量級電腦對戰。",
     "tags": ["Python"]
+  },
+  {
+    "title": "綠色運輸整合查詢地圖",
+    "type": "github-pages",
+    "url": "https://codepen.io/ujcycu/full/GRYerjV",
+    "source": "https://github.com/ujcycu/where_to_go",
+    "description": "以高雄市為例，在地圖上整合公車、公共自行車、捷運、輕軌等綠色運輸工具，供使用者做轉乘規劃時查詢。",
+    "tags": ["JS", "leaflet", "TDX API"]
   }
 ]

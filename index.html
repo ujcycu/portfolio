@@ -50,23 +50,23 @@
         switch(p.type) {
           case 'github-pages':
             typeBadge = `<span class="badge badge-web">Web</span>`;
-            primaryBtn = `<a href="${p.url}" target="_blank" class="btn btn-primary">開啟網頁</a>`;
-            secondaryBtn = p.source ? `<a href="${p.source}" target="_blank" class="btn btn-outline">Code</a>` : '';
+            primaryBtn = `<a href="${p.url}" target="_blank" class="btn btn-primary">網頁預覽</a>`;
+            secondaryBtn = p.source ? `<a href="${p.source}" target="_blank" class="btn btn-outline">GitHub</a>` : '';
             break;
 
           case 'codepen':
             typeBadge = `<span class="badge badge-pen">CodePen</span>`;
             // 跳轉至本地的 view.html 進行全螢幕嵌入
             const viewUrl = `view.html?type=codepen&user=${p.penUser}&id=${p.penId}&title=${encodeURIComponent(p.title)}`;
-            primaryBtn = `<a href="${viewUrl}" target="_blank" class="btn btn-primary">全螢幕預覽</a>`;
-            secondaryBtn = `<a href="https://codepen.io/${p.penUser}/pen/${p.penId}" target="_blank" class="btn btn-outline">CodePen 原站</a>`;
+            primaryBtn = `<a href="${viewUrl}" target="_blank" class="btn btn-primary">網頁預覽</a>`;
+            secondaryBtn = `<a href="https://codepen.io/${p.penUser}/pen/${p.penId}" target="_blank" class="btn btn-outline">CodePen</a>`;
             break;
 
           case 'python-script':
             typeBadge = `<span class="badge badge-py">Python</span>`;
             // 如果有 Colab 連結就給線上跑，否則引導至 GitHub 看 Readme
             primaryBtn = p.colabUrl 
-              ? `<a href="${p.colabUrl}" target="_blank" class="btn btn-primary btn-colab">⚡ 在 Colab 執行</a>` 
+              ? `<a href="${p.colabUrl}" target="_blank" class="btn btn-primary btn-colab">Colab 執行</a>` 
               : `<a href="${p.source}" target="_blank" class="btn btn-primary">查看專案</a>`;
             secondaryBtn = p.colabUrl ? `<a href="${p.source}" target="_blank" class="btn btn-outline">GitHub</a>` : '';
             break;
