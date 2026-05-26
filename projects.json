@@ -1,5 +1,13 @@
 [
   {
+    "title": "AI 日文遊戲",
+    "type": "github-pages",
+    "url": "",
+    "source": "https://github.com/ujcycu/LearnJapaneseWithAI/",
+    "description": "透過 ASP.NET Core 與 RAG 技術，由 Gemini 讀取本地教材，即時生成結構化 JSON 考題。採「一次生十題」優化 API 頻率，並支援音檔播放以加深日文動態學習。",
+    "tags": ["C#", "RAG", "Gemini", "Web Speech API"]
+  },
+  {
     "title": "股票損益計算機",
     "type": "codepen",
     "penUser": "chen-chen-the-reactor",
@@ -24,19 +32,19 @@
     "tags": ["JS", "Web Speech API"]
   },
   {
-    "title": "象棋麻將",
-    "type": "python-script",
-    "source": "https://github.com/ujcycu/elephantChess_MahJong",
-    "colabUrl": "#",
-    "description": "基於 Python 實現的經典象棋麻將單機遊戲，具備洗牌、摸打牌流程，並透過規則判定演算法實現自動胡牌檢測與輕量級電腦對戰。",
-    "tags": ["Python"]
-  },
-  {
     "title": "綠色運輸整合查詢地圖",
     "type": "github-pages",
     "url": "https://codepen.io/ujcycu/full/GRYerjV",
     "source": "https://github.com/ujcycu/where_to_go",
     "description": "以高雄市為例，在地圖上整合公車、公共自行車、捷運、輕軌等綠色運輸工具，供使用者做轉乘規劃時查詢。",
     "tags": ["JS", "leaflet", "TDX API"]
+  },
+  {
+    "title": "象棋麻將",
+    "type": "python-script",
+    "source": "https://github.com/ujcycu/elephantChess_MahJong",
+    "colabUrl": "",
+    "description": "奠基 Python 實現的經典象棋麻將單機遊戲，具備洗牌、摸打牌流程，並透過規則判定演算法實現自動胡牌檢測與輕量級電腦對戰。",
+    "tags": ["Python"]
   }
 ]

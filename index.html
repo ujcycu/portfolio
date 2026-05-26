@@ -50,8 +50,11 @@
         switch(p.type) {
           case 'github-pages':
             typeBadge = `<span class="badge badge-web">Web</span>`;
-            primaryBtn = `<a href="${p.url}" target="_blank" class="btn btn-primary">網頁預覽</a>`;
-            secondaryBtn = p.source ? `<a href="${p.source}" target="_blank" class="btn btn-outline">GitHub</a>` : '';
+            // primaryBtn = `<a href="${p.url}" target="_blank" class="btn btn-primary">網頁預覽</a>`;
+            primaryBtn = p.url
+              ? `<a href="${p.url}" target="_blank" class="btn btn-primary">網頁預覽</a>`
+              : `<a href="${p.source}" target="_blank" class="btn btn-primary">查看專案</a>`;
+            secondaryBtn = p.url ? `<a href="${p.source}" target="_blank" class="btn btn-outline">GitHub</a>` : '';
             break;
 
           case 'codepen':
