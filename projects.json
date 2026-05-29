@@ -1,5 +1,13 @@
 [
   {
+    "title": "台語押韻檢索",
+    "type": "github-pages",
+    "url": "https://ujcycu.github.io/ah-un/",
+    "source": "https://github.com/ujcycu/ah-un",
+    "description": "分類拆解台語聲韻，可依韻母、聲調查詢可相互押韻的條目，亦可查看個別條目的釋義和例句。",
+    "tags": ["JS"]
+  },
+  {
     "title": "AI 日文遊戲",
     "type": "github-pages",
     "url": "",
