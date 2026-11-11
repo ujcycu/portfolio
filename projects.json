@@ -1,5 +1,13 @@
 [
   {
+    "title": "族譜/家系圖產生器",
+    "type": "github-pages",
+    "url": "https://ujcycu.github.io/genealogyGenerator/",
+    "source": "https://github.com/ujcycu/genealogyGenerator",
+    "description": "離線輸入成員關係，產出家系圖、族譜文字，並支援各房編輯存檔後再合併。",
+    "tags": ["JS"]
+  },
+  {
     "title": "台語押韻檢索",
     "type": "github-pages",
     "url": "https://ujcycu.github.io/ah-un/",
