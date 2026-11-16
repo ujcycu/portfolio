@@ -1,5 +1,13 @@
 [
   {
+    "title": "YouBike 騎乘券雷達",
+    "type": "python-script",
+    "source": "https://github.com/ujcycu/Ride-Ticket-Radar",
+    "colabUrl": "",
+    "description": "定時抓取 YouBike 2.0 即時站點資料，監控設定的多個地點。當範圍內同時出現無車可借與無位可還的站點時，程式會算出最近的配對，並透過 Discord Webhook 通知",
+    "tags": ["Python", "Discord Webhook", "YouBike API", "Haversine"]
+  },
+  {
     "title": "族譜/家系圖產生器",
     "type": "github-pages",
     "url": "https://ujcycu.github.io/genealogyGenerator/",
