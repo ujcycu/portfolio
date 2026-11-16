@@ -13,7 +13,7 @@
     "url": "https://ujcycu.github.io/genealogyGenerator/",
     "source": "https://github.com/ujcycu/genealogyGenerator",
     "description": "離線輸入成員關係，產出家系圖、族譜文字，並支援各房編輯存檔後再合併。",
-    "tags": ["JS"]
+    "tags": ["JS", "SVG", "Canvas API", "File API", "Blob / Download API", "JSON", "OOXML (docx)", "ZIP / CRC-32"]
   },
   {
     "title": "台語押韻檢索",
